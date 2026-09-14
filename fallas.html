@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <!-- PWA: manifest generado dinámicamente con la URL exacta del host -->
+  <script>
+  (function(){
+    var LOGO='data:image/png;base64,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';
+    var startUrl=location.href.split('?')[0];
+    var scope=startUrl.substring(0,startUrl.lastIndexOf('/')+1);
+    var m={name:'AUTOTROL · Fallas de Iluminación',short_name:'Fallas IL',
+      description:'Registro de fallas de iluminación urbana con GPS',
+      start_url:startUrl,scope:scope,display:'standalone',
+      orientation:'portrait-primary',background_color:'#0f1923',theme_color:'#E87D2B',
+      lang:'es',icons:[
+        {src:LOGO,sizes:'192x192',type:'image/png',purpose:'any'},
+        {src:LOGO,sizes:'512x512',type:'image/png',purpose:'any maskable'}
+      ]};
+    var blob=new Blob([JSON.stringify(m)],{type:'application/manifest+json'});
+    var link=document.createElement('link');
+    link.rel='manifest'; link.href=URL.createObjectURL(blob);
+    document.head.appendChild(link);
+  })();
+  </script>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Fallas IL">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f1923">
+  <title>AUTOTROL · Registro de Fallas</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    :root{
+      --bg:#0f1923;--card:#16222f;--border:#1e3048;
+      --text:#e8edf2;--muted:#7a92a8;--orange:#E87D2B;
+      --topbar-h:58px;
+      --btn-lamp:#f59e0b;--btn-sect:#ef4444;--btn-def:#8b5cf6;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+    html,body{height:100%;background:var(--bg);color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden}
+
+    /* ── TOPBAR ── */
+    .topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);
+      background:var(--card);border-bottom:1px solid var(--border);
+      display:flex;align-items:center;padding:0 10px;gap:8px;z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,.4)}
+    .logo-wrap{background:#fff;border-radius:6px;padding:3px 8px;display:flex;align-items:center;flex-shrink:0}
+    .logo-wrap img{height:26px;display:block}
+    .sep{width:1px;height:22px;background:var(--border);flex-shrink:0}
+    .topbar-info{display:flex;flex-direction:column;gap:0;flex:1;min-width:0}
+    .topbar-info strong{font-size:12px;font-weight:700;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .topbar-info small{font-size:9.5px;color:var(--muted)}
+    .unit-btn{background:none;border:none;color:var(--muted);cursor:pointer;
+      padding:2px 3px;font-size:10px;display:inline-flex;align-items:center}
+    .gps-pill{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;
+      border-radius:20px;font-size:10px;font-weight:600;flex-shrink:0;white-space:nowrap}
+    .gps-pill.wait{background:rgba(232,125,43,.12);color:var(--orange);border:1px solid rgba(232,125,43,.25)}
+    .gps-pill.ok{background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.25)}
+    .gps-pill.err{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.25)}
+    .gps-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse 1.4s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .gps-pill.ok .gps-dot{animation:none}
+
+    /* Botón instalar */
+    #installBtn{
+      display:none;align-items:center;gap:5px;
+      background:var(--orange);border:none;border-radius:8px;
+      padding:6px 10px;color:#fff;font-size:11px;font-weight:700;
+      cursor:pointer;flex-shrink:0;white-space:nowrap;
+      box-shadow:0 2px 8px rgba(232,125,43,.4);
+      animation:installPulse 2s ease-in-out infinite}
+    #installBtn.visible{display:flex}
+    @keyframes installPulse{0%,100%{box-shadow:0 2px 8px rgba(232,125,43,.4)}50%{box-shadow:0 2px 16px rgba(232,125,43,.7)}}
+
+    /* Ícono de config */
+    .cfg-btn{background:none;border:none;color:var(--muted);cursor:pointer;
+      padding:6px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;
+      transition:color .15s}
+    .cfg-btn:hover{color:var(--text)}
+
+    /* ── MAP ── */
+    #map{position:fixed;top:var(--topbar-h);left:0;right:0;height:40vh;z-index:1;
+      border-bottom:2px solid var(--border)}
+    .osm-dark{filter:invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.88) saturate(0.4)}
+    #centerBtn{position:absolute;bottom:10px;right:10px;z-index:500;
+      width:36px;height:36px;border-radius:50%;background:var(--card);
+      border:1px solid var(--border);color:var(--text);cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 2px 8px rgba(0,0,0,.5);transition:background .15s}
+    #centerBtn.locked{border-color:var(--orange);color:var(--orange)}
+
+    /* ── FAULT BUTTONS ── */
+    .btn-panel{position:fixed;left:0;right:0;display:flex;flex-direction:column;gap:8px;
+      padding:10px 12px;background:var(--bg);z-index:10;border-bottom:1px solid var(--border)}
+    .btn-panel{top:calc(var(--topbar-h) + 40vh)}
+    .fault-btn{width:100%;border:none;border-radius:12px;padding:13px 16px;
+      font-size:14px;font-weight:700;letter-spacing:.3px;cursor:pointer;
+      display:flex;align-items:center;gap:10px;transition:transform .1s,opacity .1s;
+      color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);box-shadow:0 3px 10px rgba(0,0,0,.3)}
+    .fault-btn:active{transform:scale(.97);opacity:.9}
+    .fault-btn.lamp{background:linear-gradient(135deg,#d97706,var(--btn-lamp))}
+    .fault-btn.sect{background:linear-gradient(135deg,#dc2626,var(--btn-sect))}
+    .fault-btn.defi{background:linear-gradient(135deg,#7c3aed,var(--btn-def))}
+    .fault-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+    .fault-btn svg{flex-shrink:0;opacity:.9}
+    .fault-btn span{flex:1;text-align:left}
+
+    /* ── RECORDS ── */
+    .records-panel{position:fixed;left:0;right:0;bottom:0;
+      background:var(--card);border-top:1px solid var(--border);
+      display:flex;flex-direction:column;overflow:hidden}
+    .records-header{display:flex;align-items:center;padding:7px 12px;
+      border-bottom:1px solid var(--border);gap:6px;flex-shrink:0}
+    .records-header strong{font-size:12px;flex:1}
+    .rec-count{background:var(--orange);color:#fff;font-size:10px;font-weight:700;
+      padding:1px 6px;border-radius:10px}
+    .sync-status{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:3px}
+    .sync-ok{color:#22c55e}.sync-err{color:#ef4444}.sync-pend{color:var(--orange)}
+    .icon-btn{background:none;border:none;color:var(--muted);cursor:pointer;
+      padding:4px 7px;border-radius:6px;font-size:11px;font-weight:600;
+      display:flex;align-items:center;gap:3px;transition:color .15s,background .15s}
+    .icon-btn:hover{color:var(--text);background:var(--border)}
+    .icon-btn.danger:hover{color:#ef4444}
+
+    /* Tabla responsiva */
+    .records-scroll{overflow-y:auto;overflow-x:hidden;flex:1}
+    .records-scroll table{width:100%;border-collapse:collapse;font-size:11px}
+    .records-scroll thead th{padding:5px 8px;text-align:left;font-size:9.5px;
+      color:var(--muted);font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+      background:var(--bg);position:sticky;top:0;white-space:nowrap}
+    .records-scroll tbody tr{border-top:1px solid rgba(30,48,72,.6)}
+    .records-scroll tbody tr:hover{background:rgba(232,125,43,.04)}
+    .records-scroll tbody td{padding:6px 8px;vertical-align:top;line-height:1.3}
+    .t-dt{white-space:nowrap;color:var(--muted);font-size:10px}
+    .t-mov{font-weight:700;color:var(--orange)}
+    .t-addr{max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .t-addr.loading{color:var(--muted);font-style:italic;font-size:10px}
+    .falla-lamp{color:var(--btn-lamp);font-weight:700}
+    .falla-sect{color:var(--btn-sect);font-weight:700}
+    .falla-defi{color:#a78bfa;font-weight:700}
+    .t-sync{text-align:center;font-size:13px;cursor:default}
+    .t-sync.retry{cursor:pointer}
+
+    /* Columnas ocultas en móvil pequeño */
+    @media (max-width:430px){
+      .col-pos,.col-mov{display:none}
+      .t-dt{font-size:9.5px}
+      .t-addr{max-width:110px}
+    }
+    @media (max-width:360px){
+      .fault-btn{font-size:13px;padding:11px 12px}
+    }
+
+    .empty-state{padding:20px;text-align:center;color:var(--muted);font-size:12px}
+
+    /* ── BANNER iOS ── */
+    #iosBanner{position:fixed;bottom:0;left:0;right:0;z-index:3000;
+      background:var(--card);border-top:2px solid var(--orange);
+      padding:12px 16px;display:none;align-items:center;gap:10px}
+    #iosBanner.show{display:flex}
+    #iosBanner p{flex:1;font-size:12px;line-height:1.5;color:var(--text)}
+    #iosBanner p b{color:var(--orange)}
+    #iosBanner button{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px}
+
+    /* ── BANNER sin webhook ── */
+    #webhookBanner{display:none;background:rgba(232,125,43,.12);
+      border-bottom:1px solid rgba(232,125,43,.25);
+      padding:6px 12px;font-size:11px;color:var(--orange);
+      text-align:center;cursor:pointer;flex-shrink:0}
+    #webhookBanner.show{display:block}
+
+    /* ── MODALES ── */
+    .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;
+      display:flex;align-items:center;justify-content:center;padding:16px;
+      backdrop-filter:blur(3px)}
+    .modal-bg.hidden{display:none}
+    .modal{background:var(--card);border:1px solid var(--border);border-radius:16px;
+      padding:22px;width:100%;max-width:340px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    .modal h3{font-size:15px;margin-bottom:5px}
+    .modal p{font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5}
+    .modal label{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.3px;
+      display:block;margin-bottom:4px;text-transform:uppercase}
+    .modal input{width:100%;background:var(--bg);border:1px solid var(--border);
+      border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;
+      outline:none;transition:border-color .15s;margin-bottom:12px}
+    .modal input:focus{border-color:var(--orange)}
+    .modal-btns{display:flex;gap:8px;margin-top:4px}
+    .btn-primary{flex:1;background:var(--orange);border:none;border-radius:8px;
+      padding:10px;color:#fff;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .15s}
+    .btn-primary:hover{opacity:.88}
+    .btn-ghost{background:none;border:1px solid var(--border);border-radius:8px;
+      padding:10px 14px;color:var(--muted);font-size:13px;cursor:pointer}
+    .btn-ghost:hover{color:var(--text)}
+    .btn-test{background:var(--bg);border:1px solid var(--border);border-radius:8px;
+      padding:8px 12px;color:var(--text);font-size:12px;cursor:pointer;width:100%;
+      margin-bottom:10px;transition:border-color .15s}
+    .btn-test:hover{border-color:var(--orange)}
+    .modal-section{border-top:1px solid var(--border);margin-top:14px;padding-top:14px}
+
+    /* ── TOAST ── */
+    #toast{position:fixed;bottom:calc(var(--rec-h,140px) + 10px);left:50%;
+      transform:translateX(-50%) translateY(10px);
+      background:var(--card);border:1px solid var(--border);border-radius:10px;
+      padding:9px 16px;font-size:12px;font-weight:600;z-index:1500;
+      opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;
+      white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+    #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    .leaflet-interactive.accuracy-circle{stroke:rgba(59,130,246,.5);fill:rgba(59,130,246,.12)}
+  </style>
+</head>
+<body>
+
+<!-- ── MODAL: Identificación Móvil ── -->
+<div class="modal-bg" id="unitModal">
+  <div class="modal">
+    <h3>🚗 Identificación del Móvil</h3>
+    <p>Ingresá el número o nombre de tu unidad. Se guardará en el dispositivo.</p>
+    <label>Nombre del móvil</label>
+    <input type="text" id="unitInput" placeholder="Ej: Móvil 12 · Unidad A3" maxlength="40" autocomplete="off">
+    <div class="modal-btns">
+      <button class="btn-ghost" onclick="closeUnitModal()">Cancelar</button>
+      <button class="btn-primary" onclick="saveUnit()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: Configuración (Webhook) ── -->
+<div class="modal-bg hidden" id="cfgModal">
+  <div class="modal">
+    <h3>⚙️ Configuración</h3>
+
+    <label>Nombre del móvil</label>
+    <input type="text" id="cfgUnit" placeholder="Ej: Móvil 12" maxlength="40" autocomplete="off">
+
+    <div class="modal-section">
+      <label>URL Webhook Google Sheets</label>
+      <p>Pegá aquí la URL de tu Apps Script implementado para sincronizar registros automáticamente.</p>
+      <input type="url" id="cfgWebhook" placeholder="https://script.google.com/macros/s/..." autocomplete="off">
+      <button class="btn-test" onclick="testWebhook()">🧪 Probar conexión</button>
+    </div>
+
+    <div class="modal-btns">
+      <button class="btn-ghost" onclick="closeCfgModal()">Cancelar</button>
+      <button class="btn-primary" onclick="saveCfg()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOPBAR ── -->
+<div class="topbar">
+  <div class="logo-wrap">
+    <img src="data:image/png;base64,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" alt="AUTOTROL">
+  </div>
+  <div class="sep"></div>
+  <div class="topbar-info">
+    <strong>
+      <span id="unitName">Sin configurar</span>
+      <button class="unit-btn" onclick="openUnitModal()" title="Cambiar móvil">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>
+      </button>
+    </strong>
+    <small>Registro de Fallas de Iluminación</small>
+  </div>
+  <!-- Botón instalar PWA -->
+  <button id="installBtn" onclick="installApp()" title="Instalar app en el teléfono">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Instalar
+  </button>
+  <!-- GPS -->
+  <div id="gpsPill" class="gps-pill wait">
+    <div class="gps-dot"></div>
+    <span id="gpsLabel">GPS…</span>
+  </div>
+  <!-- Config -->
+  <button class="cfg-btn" onclick="openCfgModal()" title="Configuración">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Banner sin webhook -->
+<div id="webhookBanner" onclick="openCfgModal()">
+  ⚠️ Sincronización con Google Sheets no configurada — tocá para configurar
+</div>
+
+<!-- ── MAP ── -->
+<div id="map">
+  <button id="centerBtn" onclick="toggleCenter()" title="Centrar en mi posición">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/>
+      <circle cx="12" cy="12" r="8" stroke-dasharray="2 4"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ── FAULT BUTTONS ── -->
+<div class="btn-panel" id="btnPanel">
+  <button class="fault-btn lamp" onclick="registerFault('Lámpara Apagada','lamp')" id="btnLamp" disabled>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+    <span>Lámpara Apagada</span>
+  </button>
+  <button class="fault-btn sect" onclick="registerFault('Sector Apagado','sect')" id="btnSect" disabled>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      <line x1="1" y1="1" x2="23" y2="23" stroke-width="2"/>
+    </svg>
+    <span>Sector Apagado</span>
+  </button>
+  <button class="fault-btn defi" onclick="registerFault('Iluminación Deficiente','defi')" id="btnDefi" disabled>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/>
+    </svg>
+    <span>Iluminación Deficiente</span>
+  </button>
+</div>
+
+<!-- ── RECORDS ── -->
+<div class="records-panel" id="recordsPanel">
+  <div class="records-header">
+    <strong>Registros</strong>
+    <span class="rec-count" id="recCount">0</span>
+    <span class="sync-status" id="syncStatus"></span>
+    <button class="icon-btn" onclick="retrySend()" title="Reintentar sync">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.32"/>
+      </svg>
+    </button>
+    <button class="icon-btn" onclick="exportCSV()" title="Exportar CSV">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      CSV
+    </button>
+    <button class="icon-btn danger" onclick="confirmClear()" title="Limpiar">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="3 6 5 6 21 6"/>
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+        <path d="M10 11v6m4-6v6"/>
+      </svg>
+    </button>
+  </div>
+  <div class="records-scroll" id="recordsScroll">
+    <div class="empty-state" id="emptyState">No hay registros aún.<br>Presioná un botón para registrar una falla.</div>
+    <table id="recTable" style="display:none">
+      <thead>
+        <tr>
+          <th>Fecha/Hora</th>
+          <th class="col-mov">Móvil</th>
+          <th class="col-pos">Posición</th>
+          <th>Dirección</th>
+          <th>Falla</th>
+          <th title="Sincronización">⇅</th>
+        </tr>
+      </thead>
+      <tbody id="recBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Banner iOS instalar -->
+<div id="iosBanner">
+  <p>📲 Para instalar esta app: tocá <b>Compartir</b> → <b>Agregar a inicio</b></p>
+  <button onclick="dismissIos()">✕</button>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ══════════════════════ CONSTANTES ══════════════════════ */
+const KEY_REC  = 'autotrol_fallas_v2';
+const KEY_UNIT = 'autotrol_movil';
+const KEY_HOOK = 'autotrol_webhook';
+
+/* ══════════════════════ ESTADO ══════════════════════ */
+let records    = [];
+let currentPos = null;
+let map, posMarker, accCircle;
+let centerLocked = true;
+let installPrompt = null;
+
+/* ══════════════════════ PWA: INSTALL ══════════════════════ */
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  installPrompt = e;
+  document.getElementById('installBtn').classList.add('visible');
+});
+window.addEventListener('appinstalled', () => {
+  document.getElementById('installBtn').classList.remove('visible');
+  installPrompt = null;
+  showToast('✅ App instalada correctamente');
+});
+
+function installApp() {
+  if (!installPrompt) return;
+  installPrompt.prompt();
+  installPrompt.userChoice.then(r => {
+    if (r.outcome === 'accepted') document.getElementById('installBtn').classList.remove('visible');
+    installPrompt = null;
+  });
+}
+
+/* iOS: mostrar banner "Agregar a inicio" solo una vez */
+function checkIOS() {
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  if (isIOS && !standalone && !localStorage.getItem('ios_hint_shown')) {
+    document.getElementById('iosBanner').classList.add('show');
+  }
+}
+function dismissIos() {
+  localStorage.setItem('ios_hint_shown', '1');
+  document.getElementById('iosBanner').classList.remove('show');
+}
+
+/* Service Worker */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('SW registrado'))
+      .catch(e => console.warn('SW error:', e));
+  });
+}
+
+/* ══════════════════════ INIT ══════════════════════ */
+window.addEventListener('load', () => {
+  loadRecords();
+  loadUnit();
+  initMap();
+  startGPS();
+  layoutPanels();
+  checkWebhookBanner();
+  checkIOS();
+  window.addEventListener('resize', layoutPanels);
+  window.addEventListener('online', () => { retrySend(); showToast('🌐 Conexión restaurada'); });
+});
+
+function layoutPanels() {
+  const topH  = 58 + window.innerHeight * 0.40;
+  const btnH  = document.getElementById('btnPanel').offsetHeight;
+  const wbH   = document.getElementById('webhookBanner').offsetHeight;
+  const recTop = topH + btnH + wbH;
+  const recH  = window.innerHeight - recTop;
+  const rp    = document.getElementById('recordsPanel');
+  rp.style.top    = recTop + 'px';
+  rp.style.height = recH + 'px';
+  document.getElementById('toast').style.bottom = (recH + 8) + 'px';
+  document.documentElement.style.setProperty('--rec-h', recH + 'px');
+}
+
+/* ══════════════════════ MAPA ══════════════════════ */
+function initMap() {
+  map = L.map('map', { center:[-32.9,-60.7], zoom:15, zoomControl:false, attributionControl:true });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:19, className:'osm-dark', attribution:'&copy; <a href="https://openstreetmap.org">OSM</a>'
+  }).addTo(map);
+  L.control.zoom({ position:'topleft' }).addTo(map);
+  map.on('dragstart', () => { centerLocked = false; updateCenterBtn(); });
+}
+
+function updateMapPos(lat, lon, acc) {
+  const ll = [lat, lon];
+  if (!posMarker) {
+    posMarker = L.circleMarker(ll, { radius:10, fillColor:'#3b82f6', fillOpacity:.9, color:'#fff', weight:2, zIndexOffset:100 }).addTo(map);
+    accCircle  = L.circle(ll, { radius:acc, className:'accuracy-circle', interactive:false }).addTo(map);
+  } else { posMarker.setLatLng(ll); accCircle.setLatLng(ll); accCircle.setRadius(acc); }
+  if (centerLocked) map.setView(ll, Math.max(map.getZoom(), 16));
+}
+
+function toggleCenter() {
+  centerLocked = !centerLocked;
+  updateCenterBtn();
+  if (centerLocked && currentPos) map.setView([currentPos.lat, currentPos.lon], Math.max(map.getZoom(),16));
+}
+function updateCenterBtn() {
+  document.getElementById('centerBtn').classList.toggle('locked', centerLocked);
+}
+
+/* ══════════════════════ GPS ══════════════════════ */
+function startGPS() {
+  if (!navigator.geolocation) { setGPS('err','Sin GPS'); return; }
+  setGPS('wait','Buscando…');
+  navigator.geolocation.watchPosition(
+    pos => {
+      const { latitude:lat, longitude:lon, accuracy:acc } = pos.coords;
+      currentPos = { lat, lon, acc };
+      updateMapPos(lat, lon, acc);
+      setGPS('ok', `±${Math.round(acc)}m`);
+      enableButtons(true);
+    },
+    err => { setGPS('err', err.code===1?'Denegado':'Error GPS'); enableButtons(false); },
+    { enableHighAccuracy:true, timeout:15000, maximumAge:5000 }
+  );
+}
+
+function setGPS(state, label) {
+  const p = document.getElementById('gpsPill');
+  p.className = 'gps-pill ' + state;
+  document.getElementById('gpsLabel').textContent = label;
+}
+function enableButtons(on) {
+  ['btnLamp','btnSect','btnDefi'].forEach(id => document.getElementById(id).disabled = !on);
+}
+
+/* ══════════════════════ UNIT ══════════════════════ */
+function loadUnit() {
+  const u = localStorage.getItem(KEY_UNIT);
+  if (u) setUnitDisplay(u);
+  else openUnitModal();
+}
+function getUnit() { return localStorage.getItem(KEY_UNIT) || 'Sin configurar'; }
+function setUnitDisplay(u) {
+  document.getElementById('unitName').childNodes[0].textContent = u + ' ';
+}
+function openUnitModal() {
+  document.getElementById('unitInput').value = getUnit() !== 'Sin configurar' ? getUnit() : '';
+  document.getElementById('unitModal').classList.remove('hidden');
+  setTimeout(() => document.getElementById('unitInput').focus(), 100);
+}
+function closeUnitModal() {
+  if (!localStorage.getItem(KEY_UNIT)) return;
+  document.getElementById('unitModal').classList.add('hidden');
+}
+function saveUnit() {
+  const v = document.getElementById('unitInput').value.trim();
+  if (!v) { document.getElementById('unitInput').focus(); return; }
+  localStorage.setItem(KEY_UNIT, v);
+  setUnitDisplay(v);
+  document.getElementById('unitModal').classList.add('hidden');
+}
+document.getElementById('unitInput').addEventListener('keydown', e => { if (e.key==='Enter') saveUnit(); });
+
+/* ══════════════════════ CONFIG (webhook) ══════════════════════ */
+function openCfgModal() {
+  document.getElementById('cfgUnit').value = getUnit() !== 'Sin configurar' ? getUnit() : '';
+  document.getElementById('cfgWebhook').value = localStorage.getItem(KEY_HOOK) || '';
+  document.getElementById('cfgModal').classList.remove('hidden');
+}
+function closeCfgModal() { document.getElementById('cfgModal').classList.add('hidden'); }
+function saveCfg() {
+  const u = document.getElementById('cfgUnit').value.trim();
+  const h = document.getElementById('cfgWebhook').value.trim();
+  if (u) { localStorage.setItem(KEY_UNIT, u); setUnitDisplay(u); }
+  if (h) localStorage.setItem(KEY_HOOK, h);
+  else localStorage.removeItem(KEY_HOOK);
+  document.getElementById('cfgModal').classList.add('hidden');
+  checkWebhookBanner();
+  if (h) { showToast('✅ Webhook guardado'); retrySend(); }
+  else showToast('⚠️ Sin webhook configurado');
+}
+async function testWebhook() {
+  const url = document.getElementById('cfgWebhook').value.trim();
+  if (!url) { showToast('Pegá la URL primero'); return; }
+  try {
+    await fetch(url + '?test=1', { method:'GET', mode:'no-cors' });
+    showToast('✅ Conexión OK (no-cors)');
+  } catch(e) { showToast('❌ Error: ' + e.message); }
+}
+function checkWebhookBanner() {
+  const banner = document.getElementById('webhookBanner');
+  if (!localStorage.getItem(KEY_HOOK)) {
+    banner.classList.add('show');
+  } else {
+    banner.classList.remove('show');
+  }
+  setTimeout(layoutPanels, 50);
+}
+
+/* ══════════════════════ REGISTRAR FALLA ══════════════════════ */
+function registerFault(label, cls) {
+  if (!currentPos) return;
+  const rec = {
+    id:      Date.now(),
+    dt:      formatDT(new Date()),
+    movil:   getUnit(),
+    lat:     currentPos.lat,
+    lon:     currentPos.lon,
+    acc:     currentPos.acc,
+    address: null,
+    falla:   label,
+    cls,
+    sync:    'pending',
+  };
+  records.unshift(rec);
+  saveRecords();
+  renderRecords();
+  showToast('📍 ' + label);
+  geocodeAndSync(rec.id, rec.lat, rec.lon);
+}
+
+/* ══════════════════════ GEOCODE + SYNC ══════════════════════ */
+async function geocodeAndSync(id, lat, lon) {
+  try {
+    const r = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=es&zoom=18`,
+      { headers:{ 'Accept':'application/json' } }
+    );
+    const d = await r.json();
+    updateRecord(id, { address: d.address ? formatAddress(d.address) : `${lat.toFixed(5)},${lon.toFixed(5)}` });
+  } catch {
+    updateRecord(id, { address: '(sin conexión)' });
+  }
+  syncRecord(id);
+}
+
+async function syncRecord(id) {
+  const url = localStorage.getItem(KEY_HOOK);
+  if (!url) return;
+  const rec = records.find(r => r.id === id);
+  if (!rec || rec.sync === 'ok') return;
+  updateRecord(id, { sync:'sending' });
+  try {
+    const p = new URLSearchParams({
+      fecha: rec.dt, movil: rec.movil, lat: rec.lat, lon: rec.lon,
+      precision: Math.round(rec.acc), direccion: rec.address||'', falla: rec.falla,
+    });
+    await fetch(url + '?' + p.toString(), { method:'GET', mode:'no-cors' });
+    updateRecord(id, { sync:'ok' });
+  } catch {
+    updateRecord(id, { sync:'error' });
+  }
+}
+
+function updateRecord(id, fields) {
+  const rec = records.find(r => r.id === id);
+  if (rec) { Object.assign(rec, fields); saveRecords(); renderRecords(); }
+}
+
+function retrySend() {
+  const url = localStorage.getItem(KEY_HOOK);
+  if (!url) return;
+  records.filter(r => r.sync !== 'ok').forEach(r => syncRecord(r.id));
+}
+
+/* ══════════════════════ RENDER ══════════════════════ */
+function renderRecords() {
+  const count  = records.length;
+  document.getElementById('recCount').textContent = count;
+
+  // Sync status resumen
+  const pend = records.filter(r => r.sync === 'pending' || r.sync === 'error').length;
+  const ok   = records.filter(r => r.sync === 'ok').length;
+  const ss   = document.getElementById('syncStatus');
+  if (count === 0) ss.innerHTML = '';
+  else if (pend > 0) ss.innerHTML = `<span class="sync-pend">↑${pend} pend.</span>`;
+  else if (ok > 0 && ok === count) ss.innerHTML = `<span class="sync-ok">✓ sincronizado</span>`;
+
+  if (!count) {
+    document.getElementById('emptyState').style.display = 'block';
+    document.getElementById('recTable').style.display   = 'none';
+    return;
+  }
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('recTable').style.display   = 'table';
+
+  const syncIcon = r => {
+    if (r.sync==='ok')      return '<span title="Enviado">✓</span>';
+    if (r.sync==='sending') return '<span title="Enviando…" style="color:#60a5fa;animation:pulse 1s infinite">⇅</span>';
+    if (r.sync==='error')   return `<span title="Error — tocar para reintentar" class="retry" onclick="syncRecord(${r.id})" style="color:#ef4444;cursor:pointer">✗</span>`;
+    return `<span title="Pendiente" style="color:var(--orange)">…</span>`;
+  };
+
+  document.getElementById('recBody').innerHTML = records.map(r => `
+    <tr>
+      <td class="t-dt">${r.dt}</td>
+      <td class="t-mov col-mov">${escHtml(r.movil)}</td>
+      <td class="t-pos col-pos" style="font-family:monospace;font-size:9.5px;color:var(--muted)">${r.lat.toFixed(4)}<br>${r.lon.toFixed(4)}</td>
+      <td class="t-addr ${r.address===null?'loading':''}">${r.address===null?'⏳…':escHtml(r.address||'—')}</td>
+      <td class="falla-${r.cls}">${escHtml(r.falla)}</td>
+      <td class="t-sync">${syncIcon(r)}</td>
+    </tr>`).join('');
+
+  layoutPanels();
+}
+
+/* ══════════════════════ EXPORT CSV ══════════════════════ */
+function exportCSV() {
+  if (!records.length) { showToast('No hay registros'); return; }
+  const hdr = 'Fecha/Hora,Móvil,Latitud,Longitud,Precisión(m),Dirección,Falla,Sync\n';
+  const rows = records.map(r =>
+    `"${r.dt}","${r.movil}","${r.lat}","${r.lon}","${Math.round(r.acc)}","${(r.address||'').replace(/"/g,'""')}","${r.falla}","${r.sync}"`
+  ).join('\n');
+  const blob = new Blob(['﻿'+hdr+rows], { type:'text/csv;charset=utf-8' });
+  const a = Object.assign(document.createElement('a'), {
+    href: URL.createObjectURL(blob),
+    download: `fallas_${formatFileDate()}.csv`
+  });
+  a.click(); URL.revokeObjectURL(a.href);
+  showToast('CSV descargado');
+}
+
+/* ══════════════════════ STORAGE ══════════════════════ */
+function saveRecords() {
+  try { localStorage.setItem(KEY_REC, JSON.stringify(records)); } catch(_) {}
+}
+function loadRecords() {
+  try { records = JSON.parse(localStorage.getItem(KEY_REC) || '[]'); } catch(_) { records = []; }
+  renderRecords();
+}
+
+function confirmClear() {
+  if (!records.length) return;
+  if (confirm(`¿Eliminar los ${records.length} registros?`)) {
+    records = []; saveRecords(); renderRecords(); showToast('Registros eliminados');
+  }
+}
+
+/* ══════════════════════ TOAST ══════════════════════ */
+let toastT;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+/* ══════════════════════ HELPERS ══════════════════════ */
+function formatDT(d) {
+  const p = n => String(n).padStart(2,'0');
+  return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+}
+function formatFileDate() {
+  const d=new Date(), p=n=>String(n).padStart(2,'0');
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}`;
+}
+function formatAddress(a) {
+  if (!a) return '—';
+  const road   = a.road || a.pedestrian || a.footway || '';
+  const num    = a.house_number || '';
+  const suburb = a.suburb || a.neighbourhood || a.city_district || '';
+  return [road+(num?' '+num:''), suburb].filter(Boolean).join(', ') || a.city || '—';
+}
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>
